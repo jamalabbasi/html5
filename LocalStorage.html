@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<style>
+ #droparea {
+	width:400px;
+	height:200px;
+	border:1px solid green;
+ }
+</style>
+</head>
+<html>
+<body>
+	<button onclick="setItem()">Set Last Name</button>
+	<button onclick="getItem()">Get Last Name</button>
+	<div id="result">Jamaal</div> 
+  <script>
+  function getItem(){
+	document.getElementById("result")
+	.innerHTML = localStorage.getItem("lastname");
+	}
+	function setItem(){
+		 localStorage.setItem("lastname", "Smith");
+	}
+   </script>	
+</body>
+</html>
