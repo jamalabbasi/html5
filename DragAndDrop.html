@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+<style>
+ #droparea {
+	width:400px;
+	height:200px;
+	border:1px solid green;
+ }
+</style>
+</head>
+<html>
+<body>
+	<img id="drag1" src="images.jpeg" draggable="true" ondragstart="drag(event)" width="336" height="69">
+	<div id="droparea" ondrop="drop(event)" ondragover="allowDrop(event)">	</div>	
+<script>
+	function drag(ev){
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+	function drop(ev){
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+	function allowDrop(ev){
+		ev.preventDefault();
+	}
+</script>	
+</body>
+</html>
